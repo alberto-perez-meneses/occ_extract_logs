@@ -5,5 +5,5 @@ parsed_json = (json.loads(f.read()))
 
 
 for x in parsed_json["items"]:
-	print x
+	print [x]
 

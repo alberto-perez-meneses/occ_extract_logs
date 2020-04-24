@@ -19,8 +19,10 @@ python transform/getToken.py > response/session.prd.txt
 
 #cat response/trace.out
 
-python ./transform/logOCC.log.py prd > response/response.log_occ.prd.out
+python ./transform/logOCC.log.py prd > logs/ccstore_$(date '+%s').prd.out
 
-python transform/logOCCAdmin.log.py prd > response/response.log_occ_admin.prd.out
+python transform/logOCCAdmin.log.py prd > logs/ccadmin.$(date '+%s').prd.out
+
+find logs/* -mtime +10 -exec rm {} \;
 
 exit 0
